@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MC ADDONS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            ⛏️ <span>MC</span> ADDONS
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#addons">Addons</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    🟢 MINECRAFT BEDROCK
+                </div>
+
+                <h1>
+                    MINECRAFT<br>
+                    <span>ADDONS</span>
+                </h1>
+
+                <p>
+                    Download addon Minecraft Bedrock favoritmu
+                    dengan cepat dan mudah.
+                </p>
+
+                <a href="#addons" class="hero-btn">
+                    🚀 LIHAT ADDONS
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section id="addons" class="addons-section">
+
+            <div class="section-title">
+                <p>COLLECTION</p>
+                <h2>ADDONS TERBARU</h2>
+            </div>
+
+
+            <div class="search-box">
+                🔍
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari addon..."
+                    oninput="searchAddons()"
+                >
+            </div>
+
+
+            <div id="addonList" class="addon-grid">
+
+
+                <!-- ADDON 1 -->
+
+                <article class="addon-card">
+
+                    <div class="addon-image">
+                        <div class="mc-icon">⚔️</div>
+                    </div>
+
+                    <div class="addon-info">
+
+                        <div class="addon-type">
+                            MCADDON
+                        </div>
+
+                        <h3>RPG Warrior</h3>
+
+                        <p>
+                            Tambahkan mob RPG warrior
+                            baru ke Minecraft Bedrock.
+                        </p>
+
+                        <div class="addon-bottom">
+
+                            <span>
+                                📦 Bedrock
+                            </span>
+
+                            <a
+                                class="download-btn"
+                                href="addons/rpg-warrior.mcaddon"
+                                download
+                            >
+                                ⬇ DOWNLOAD
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ADDON 2 -->
+
+                <article class="addon-card">
+
+                    <div class="addon-image">
+                        <div class="mc-icon">🧟</div>
+                    </div>
+
+                    <div class="addon-info">
+
+                        <div class="addon-type">
+                            MCPACK
+                        </div>
+
+                        <h3>Zombie Addon</h3>
+
+                        <p>
+                            Addon zombie untuk dunia
+                            Minecraft Bedrock kamu.
+                        </p>
+
+                        <div class="addon-bottom">
+
+                            <span>
+                                📦 Bedrock
+                            </span>
+
+                            <a
+                                class="download-btn"
+                                href="addons/addon-2.mcpack"
+                                download
+                            >
+                                ⬇ DOWNLOAD
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ADDON 3 -->
+
+                <article class="addon-card">
+
+                    <div class="addon-image">
+                        <div class="mc-icon">🔥</div>
+                    </div>
+
+                    <div class="addon-info">
+
+                        <div class="addon-type">
+                            MCADDON
+                        </div>
+
+                        <h3>Fire Warrior</h3>
+
+                        <p>
+                            Warrior dengan kekuatan
+                            api untuk Minecraft.
+                        </p>
+
+                        <div class="addon-bottom">
+
+                            <span>
+                                📦 Bedrock
+                            </span>
+
+                            <a
+                                class="download-btn"
+                                href="addons/addon-3.mcaddon"
+                                download
+                            >
+                                ⬇ DOWNLOAD
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <section id="about" class="about">
+
+            <div class="section-title">
+                <p>ABOUT</p>
+                <h2>MC ADDONS</h2>
+            </div>
+
+            <p>
+                Website sederhana untuk membagikan addon
+                Minecraft Bedrock buatan komunitas.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            ⛏️ MC ADDONS
+        </div>
+
+        <p>
+            © 2026 MC Addons. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
