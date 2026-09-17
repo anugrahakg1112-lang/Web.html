@@ -1,0 +1,910 @@
+/* ========================================
+   MC ADDONS WEBSITE
+   STYLE CSS V1
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #070b08;
+    --bg2: #0c120e;
+    --card: #101711;
+    --border: #263528;
+    --green: #55e36c;
+    --green2: #8aff9a;
+    --text: #ffffff;
+    --muted: #9aa59c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050705;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #315a38;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--green);
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(7, 11, 8, 0.88);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--green);
+
+    text-shadow:
+        0 0 15px rgba(85, 227, 108, 0.4);
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    position: relative;
+
+    color: #b7c0b9;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--green);
+
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+    display: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(65, 220, 88, 0.17),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(40, 140, 60, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #070b08,
+            #0c160f
+        );
+}
+
+
+/* GRID EFFECT */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.13;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 720px;
+
+    animation: heroIn 0.8s ease;
+}
+
+@keyframes heroIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* BADGE */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #35663e;
+    border-radius: 999px;
+
+    background: rgba(50, 150, 65, 0.08);
+
+    color: var(--green2);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 25px rgba(85, 227, 108, 0.05);
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 115px);
+
+    line-height: 0.87;
+
+    font-weight: 1000;
+
+    letter-spacing: -6px;
+}
+
+.hero h1 span {
+    color: var(--green);
+
+    text-shadow:
+        0 0 20px rgba(85, 227, 108, 0.25),
+        0 0 50px rgba(85, 227, 108, 0.10);
+}
+
+
+/* HERO TEXT */
+
+.hero p {
+    max-width: 560px;
+
+    margin: 32px 0;
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* HERO BUTTON */
+
+.hero-btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 24px;
+
+    border-radius: 9px;
+
+    background: var(--green);
+
+    color: #061008;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 1000;
+
+    overflow: hidden;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 8px 30px rgba(85, 227, 108, 0.12);
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(85, 227, 108, 0.22);
+}
+
+.hero-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   ADDONS SECTION
+======================================== */
+
+.addons-section {
+    padding: 100px 7%;
+
+    background: var(--bg);
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-title p {
+    margin-bottom: 8px;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    font-weight: 1000;
+
+    letter-spacing: -1px;
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search-box {
+    max-width: 550px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 40px;
+    padding: 15px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 11px;
+
+    background: #0b100d;
+
+    color: #69756d;
+
+    transition: 0.25s;
+}
+
+.search-box:focus-within {
+    border-color: #42774b;
+
+    box-shadow:
+        0 0 0 3px rgba(85, 227, 108, 0.05);
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #68736c;
+}
+
+
+/* ========================================
+   ADDON GRID
+======================================== */
+
+.addon-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   ADDON CARD
+======================================== */
+
+.addon-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    background: var(--card);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: cardIn 0.6s ease both;
+}
+
+@keyframes cardIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.addon-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #477d50;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(85, 227, 108, 0.04);
+}
+
+
+/* CARD IMAGE */
+
+.addon-image {
+    position: relative;
+
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            #1c3822,
+            #0b110d 70%
+        );
+}
+
+
+/* IMAGE LIGHT */
+
+.addon-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: rgba(85, 227, 108, 0.10);
+
+    filter: blur(30px);
+}
+
+
+/* ICON */
+
+.mc-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #3a6040;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #284d2f,
+            #142718
+        );
+
+    font-size: 52px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.4);
+
+    transition: 0.3s;
+}
+
+.addon-card:hover .mc-icon {
+    transform: scale(1.08) rotate(-2deg);
+
+    box-shadow:
+        0 20px 50px rgba(85, 227, 108, 0.12);
+}
+
+
+/* ========================================
+   ADDON INFO
+======================================== */
+
+.addon-info {
+    padding: 22px;
+}
+
+.addon-type {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: rgba(85, 227, 108, 0.08);
+
+    color: var(--green);
+
+    font-size: 9px;
+    font-weight: 1000;
+
+    letter-spacing: 1.5px;
+}
+
+.addon-info h3 {
+    margin: 12px 0 8px;
+
+    font-size: 23px;
+
+    font-weight: 900;
+}
+
+.addon-info p {
+    min-height: 48px;
+
+    color: #929d95;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   ADDON BOTTOM
+======================================== */
+
+.addon-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 22px;
+
+    color: #747f77;
+
+    font-size: 11px;
+}
+
+
+/* DOWNLOAD BUTTON */
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 14px;
+
+    border-radius: 7px;
+
+    background: var(--green);
+
+    color: #061008;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 1000;
+
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    background: var(--green2);
+
+    transform: scale(1.05);
+}
+
+.download-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about {
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0a0f0c,
+            #080b08
+        );
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+}
+
+.about .section-title {
+    margin-bottom: 20px;
+}
+
+.about > p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #8f9992;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 35px 7%;
+
+    border-top: 1px solid var(--border);
+
+    background: #050705;
+
+    text-align: center;
+
+    color: #687169;
+
+    font-size: 12px;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 65px;
+
+        padding: 0 5%;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    nav {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 5%;
+
+        background: rgba(7, 11, 8, 0.97);
+
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    nav.active {
+        display: flex;
+    }
+
+
+    nav a {
+        padding: 15px 5px;
+    }
+
+
+    nav a::after {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: 570px;
+
+        padding: 60px 6%;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(52px, 16vw, 80px);
+
+        letter-spacing: -4px;
+    }
+
+
+    .hero p {
+        margin: 25px 0;
+
+        font-size: 15px;
+    }
+
+
+    .hero-btn {
+        width: 100%;
+    }
+
+
+    .addons-section {
+        padding: 75px 5%;
+    }
+
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+
+
+    .search-box {
+        width: 100%;
+    }
+
+
+    .addon-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .addon-image {
+        height: 185px;
+    }
+
+
+    .about {
+        padding: 75px 6%;
+    }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+    .addon-info {
+        padding: 18px;
+    }
+
+    .addon-bottom {
+        align-items: flex-end;
+    }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
